@@ -135,10 +135,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Level
       objectReference: {fileID: 0}
-    - target: {fileID: 7888287855164918696, guid: 2247a936aa19dca42aa9fd66ef943ba0, type: 3}
-      propertyPath: m_Intensity
-      value: 2.5
-      objectReference: {fileID: 0}
     - target: {fileID: 9041573443481127921, guid: 2247a936aa19dca42aa9fd66ef943ba0, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -180,11 +176,7 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects:
-    - {fileID: 5175624463849596160, guid: 2247a936aa19dca42aa9fd66ef943ba0, type: 3}
-    - {fileID: 2501422752862824495, guid: 2247a936aa19dca42aa9fd66ef943ba0, type: 3}
-    - {fileID: 6141672501782720162, guid: 2247a936aa19dca42aa9fd66ef943ba0, type: 3}
-    - {fileID: 6352356048343270936, guid: 2247a936aa19dca42aa9fd66ef943ba0, type: 3}
+    m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2247a936aa19dca42aa9fd66ef943ba0, type: 3}
