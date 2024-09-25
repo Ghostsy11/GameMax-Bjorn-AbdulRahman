@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using TreeEditor;
 using UnityEngine;
 using UnityEngine.UIElements.Experimental;
+using static UnityEngine.GraphicsBuffer;
 
 public class Patrolling : MonoBehaviour
 {
     [SerializeField] EnemyMovingTowrdsPlayer whenPlayerFound;
     [SerializeField] bool isFound;
-    bool rotating = false;
 
     [SerializeField] Transform[] points;
     [SerializeField] float speedToThePoint;
@@ -23,7 +23,14 @@ public class Patrolling : MonoBehaviour
     [SerializeField] float jumpForce;
     [SerializeField] Rigidbody Rigidbodyrb;
 
+    [SerializeField] AnimationContoller animationContoller;
+    [SerializeField] Animator animator;
+
+    //[SerializeField] Transform _target;
+    [SerializeField] float _turnSpeed;
     // Start is called before the first frame update
+
+
     void Start()
     {
 
@@ -35,7 +42,8 @@ public class Patrolling : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
-
+            animationContoller.DontPlayRunning();
+            Debug.Log("working");
         }
         CheckingObjectsAround();
     }
@@ -45,7 +53,9 @@ public class Patrolling : MonoBehaviour
     {
         if (!isFound && transform.position != points[current].position)
         {
+            FaceTargetPoints();
             transform.position = Vector3.MoveTowards(transform.position, points[current].position, speedToThePoint * Time.deltaTime);
+
         }
         else
         {
@@ -68,8 +78,8 @@ public class Patrolling : MonoBehaviour
                 }
                 else
                 {
+                    animationContoller.DontPlayRunning();
                     isFound = true;
-                    rotating = true;
                     Coroutine waiting = StartCoroutine(Stress());
                 }
 
@@ -80,10 +90,6 @@ public class Patrolling : MonoBehaviour
     }
 
 
-    private void DoubleCheck()
-    {
-
-    }
 
     private void OnDrawGizmos()
     {
@@ -108,20 +114,35 @@ public class Patrolling : MonoBehaviour
 
     IEnumerator Stress()
     {
-
-
-        yield return new WaitForSeconds(1);
-        StartCoroutine(RotateToPlayer());
-        yield return new WaitForSeconds(1);
-        Rigidbodyrb.AddForce(Vector3.up * jumpForce);
-        //Springen
+        //Rotate To Player
+        animationContoller.PlayTurningToPlayer();
         yield return new WaitForSeconds(3);
+        StartCoroutine(RotateToPlayer());
+
+        yield return new WaitForSeconds(3);
+        //Springen
+        animationContoller.DontTurningToPlayer();
+        animationContoller.PlayZombieJump();
+        //Rigidbodyrb.AddForce(Vector3.up * jumpForce);
+
+        // running to enemy
+        yield return new WaitForSeconds(2);
+        animationContoller.PlayRunning();
         StartCoroutine(whenPlayerFound.MoveToPlayer());
         // Play music
 
     }
 
+    private void FaceTargetPoints()
+    {
 
+        Vector3 direction = (points[current].position - transform.position).normalized;
+        Quaternion LookRotation = Quaternion.LookRotation(transform.position, points[current].position);
+        LookRotation.x = 0;
+        LookRotation.z = 0;
+        transform.rotation = Quaternion.Lerp(transform.rotation, LookRotation, _turnSpeed * Time.deltaTime);
 
+    }
 
+    //new Vector3(direction.x, 0, direction.z)
 }

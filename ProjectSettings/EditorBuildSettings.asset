@@ -4,5 +4,8 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/AbdulRahman.unity
+    guid: ef0b8101ad8aadb42bbadb60138a25a0
   m_configObjects: {}
