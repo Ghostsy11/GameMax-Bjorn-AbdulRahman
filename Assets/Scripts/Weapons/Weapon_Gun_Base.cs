@@ -31,12 +31,16 @@ public class Weapon_Gun_Base : Weapon_Base
 
     protected override IEnumerator WeaponUsed()
     {
-        int i = kickBack/10;
+        if (useSound != null){
+            useSound.Play();
+        }
+        int i = kickBack/5;
         while(i > 0){
             i--;
             yield return new WaitForFixedUpdate();
             transform.Rotate(10,0,0);
         }
+        yield return new WaitForSeconds(0.5f);
         Destroy(gameObject);
     }
 }

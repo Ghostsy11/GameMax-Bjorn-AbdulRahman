@@ -34,10 +34,7 @@ public abstract class Weapon_Base : MonoBehaviour
         used = true;
         if (useAnim != null){
             useAnim.Play();
-            await Task.Delay((int)(useAnim.clip.length/1000));
-        }
-        if (useSound != null){
-            useSound.Play();
+            await Task.Delay((int)(useAnim.clip.length*1000));
         }
         StartCoroutine(WeaponUsed());
     }
