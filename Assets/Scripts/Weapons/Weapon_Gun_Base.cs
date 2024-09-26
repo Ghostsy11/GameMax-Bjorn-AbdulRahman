@@ -36,9 +36,7 @@ public class Weapon_Gun_Base : Weapon_Base
             i--;
             yield return new WaitForFixedUpdate();
             transform.Rotate(10,0,0);
-            Debug.Log(i);
         }
-        Debug.Log("out while");
         Destroy(gameObject);
     }
 }

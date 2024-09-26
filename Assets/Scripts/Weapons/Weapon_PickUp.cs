@@ -24,13 +24,15 @@ public class Weapon_PickUp : MonoBehaviour
             Instance = this; 
         }    
         player = SC_PlayerMovement.Instance.gameObject;
-        weaponSpot = player.transform.Find("weaponSpot");
+        weaponSpot = Camera.main.transform.GetChild(1);
         selectedWeapon = UnityEngine.Random.Range(0, weapons.Count);
         Instantiate(weapons[selectedWeapon], transform.position, quaternion.identity, transform);
+        Debug.Log(player);
     }
     private void OnTriggerEnter(Collider collider){
-        if(collider == player && weaponSpot.childCount <= 0){
-            Instantiate(weapons[selectedWeapon], weaponSpot.position, weaponSpot.rotation, weaponSpot);
+        Debug.Log(collider);
+        if(collider.gameObject == player    && weaponSpot.childCount <= 0){
+            Instantiate(weaponsPrefabsPlayer[selectedWeapon], weaponSpot.position, weaponSpot.rotation, weaponSpot);
             Destroy(gameObject);
         }
     }
