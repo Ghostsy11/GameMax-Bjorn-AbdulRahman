@@ -19,32 +19,18 @@ public class Patrolling : MonoBehaviour
 
     [SerializeField] GameObject player;
     [SerializeField] private float rotationSpeed = 5;
+    [SerializeField] float _turnSpeed;
 
     [SerializeField] float jumpForce;
     [SerializeField] Rigidbody Rigidbodyrb;
 
     [SerializeField] AnimationContoller animationContoller;
-    [SerializeField] Animator animator;
 
-    //[SerializeField] Transform _target;
-    [SerializeField] float _turnSpeed;
-    // Start is called before the first frame update
+    [SerializeField] AuidoPlayer auidoclips;
 
-
-    void Start()
-    {
-
-
-    }
-
-    // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            animationContoller.DontPlayRunning();
-            Debug.Log("working");
-        }
+
         CheckingObjectsAround();
     }
 
@@ -118,7 +104,7 @@ public class Patrolling : MonoBehaviour
         animationContoller.PlayTurningToPlayer();
         yield return new WaitForSeconds(3);
         StartCoroutine(RotateToPlayer());
-
+        auidoclips.PlayZombieYellingSound();
         yield return new WaitForSeconds(3);
         //Springen
         animationContoller.DontTurningToPlayer();

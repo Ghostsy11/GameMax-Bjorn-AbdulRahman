@@ -17,6 +17,16 @@ public class AuidoPlayer : MonoBehaviour
     [SerializeField] AudioClip TakeDamageClipOnDestroy;
     [SerializeField][Range(0f, 1f)] float _volumeOnDestroy = 1f;
 
+    // Zombie Voices
+    [Header("ZombieYellingSoundEffect")]
+    [SerializeField] AudioClip Yelling;
+    [SerializeField][Range(0f, 1f)] float _soundVolume = 1f;
+
+
+    [Header("ZombiePunchSoundEffect")]
+    [SerializeField] AudioClip Punch;
+    [SerializeField][Range(0f, 1f)] float _SoundVolume = 1f;
+
     static AuidoPlayer instance;
 
 
@@ -56,6 +66,17 @@ public class AuidoPlayer : MonoBehaviour
     {
         PlayClip(TakeDamageClipOnDestroy, _volumeOnDestroy);
     }
+
+    public void PlayZombieYellingSound()
+    {
+        PlayClip(Yelling, _soundVolume);
+    }
+
+    public void PlayZombieSlap()
+    {
+        PlayClip(Punch, _SoundVolume);
+    }
+
 
     void PlayClip(AudioClip clip, float volume)
     {
