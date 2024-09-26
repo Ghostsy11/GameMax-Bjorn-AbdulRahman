@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class SC_PlayerMovement : MonoBehaviour
 {
-
+    public static SC_PlayerMovement Instance {get; private set;}
     private float moveSpeed;
     [Header("Movement")]
     [SerializeField] private float movingSpeed;
@@ -50,6 +50,14 @@ public class SC_PlayerMovement : MonoBehaviour
 
     void Start()
     {
+    if (Instance != null && Instance != this) 
+    { 
+        Destroy(this); 
+    } 
+    else 
+    { 
+        Instance = this; 
+    }         
         rb = GetComponent<Rigidbody>();
         rb.freezeRotation = true;
 
