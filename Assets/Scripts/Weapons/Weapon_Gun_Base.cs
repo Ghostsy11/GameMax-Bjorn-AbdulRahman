@@ -7,11 +7,12 @@ public class Weapon_Gun_Base : Weapon_Base
 {
     // Start is called before the first frame update
     [SerializeField] protected GameObject bulletPrefab;
-    [SerializeField] protected Transform bulletSpawnPoint;
+    protected Transform bulletSpawnPoint;
     [SerializeField] private int kickBack;
     protected override void Start()
     {
         base.Start();
+        bulletSpawnPoint = Camera.main.transform.GetChild(2);
     }
 
     // Update is called once per frame

@@ -171,6 +171,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Revolver_LP Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 5884405469530735240, guid: 3d6c7430bd21a564489df266ea8864e1, type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
     - target: {fileID: 6548879496589514802, guid: 3d6c7430bd21a564489df266ea8864e1, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -298,8 +302,7 @@ MonoBehaviour:
   dropAnim: {fileID: 0}
   useKey: 323
   useSound: {fileID: -1288002381088069230}
-  bulletPrefab: {fileID: 9141739129688607359, guid: 3f4772200d7a69d4a90328989309c410, type: 3}
-  bulletSpawnPoint: {fileID: 0}
+  bulletPrefab: {fileID: 19026177839507540, guid: b7ae10a17e67dc74eade85509a3d702f, type: 3}
   kickBack: 60
   emptyRound: {fileID: 1233302977526634986}
 --- !u!82 &-1288002381088069230

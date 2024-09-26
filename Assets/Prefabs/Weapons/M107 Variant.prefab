@@ -8,9 +8,25 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1633916680593816, guid: 7359baf27e84aa44cafac3788c8be0f1, type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 1673615449923876, guid: 7359baf27e84aa44cafac3788c8be0f1, type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 1720912225889422, guid: 7359baf27e84aa44cafac3788c8be0f1, type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
     - target: {fileID: 1829597508155286, guid: 7359baf27e84aa44cafac3788c8be0f1, type: 3}
       propertyPath: m_Name
       value: M107 Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 1829597508155286, guid: 7359baf27e84aa44cafac3788c8be0f1, type: 3}
+      propertyPath: m_TagString
+      value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 4053999043310118, guid: 7359baf27e84aa44cafac3788c8be0f1, type: 3}
       propertyPath: m_LocalPosition.x
@@ -85,8 +101,7 @@ MonoBehaviour:
   dropAnim: {fileID: 0}
   useKey: 323
   useSound: {fileID: -6557799794449198474}
-  bulletPrefab: {fileID: 9141739129688607359, guid: 3f4772200d7a69d4a90328989309c410, type: 3}
-  bulletSpawnPoint: {fileID: 0}
+  bulletPrefab: {fileID: 19026177839507540, guid: b7ae10a17e67dc74eade85509a3d702f, type: 3}
   kickBack: 50
 --- !u!82 &-6557799794449198474
 AudioSource:

@@ -8,9 +8,25 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1324608018887474, guid: ee329c3cd08e58645834d20702d7f6c6, type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 1452442627303592, guid: ee329c3cd08e58645834d20702d7f6c6, type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
     - target: {fileID: 1487774384131766, guid: ee329c3cd08e58645834d20702d7f6c6, type: 3}
       propertyPath: m_Name
       value: AK74 Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 1487774384131766, guid: ee329c3cd08e58645834d20702d7f6c6, type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 1927369336514790, guid: ee329c3cd08e58645834d20702d7f6c6, type: 3}
+      propertyPath: m_TagString
+      value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 4519716788627816, guid: ee329c3cd08e58645834d20702d7f6c6, type: 3}
       propertyPath: m_LocalPosition.x
@@ -85,8 +101,7 @@ MonoBehaviour:
   dropAnim: {fileID: 0}
   useKey: 323
   useSound: {fileID: 5274719309190202797}
-  bulletPrefab: {fileID: 9141739129688607359, guid: 3f4772200d7a69d4a90328989309c410, type: 3}
-  bulletSpawnPoint: {fileID: 0}
+  bulletPrefab: {fileID: 19026177839507540, guid: b7ae10a17e67dc74eade85509a3d702f, type: 3}
   kickBack: 40
 --- !u!82 &5274719309190202797
 AudioSource:
