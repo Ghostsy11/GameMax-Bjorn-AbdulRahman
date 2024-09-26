@@ -21,17 +21,51 @@ public class ScoreManager : MonoBehaviour
 
     void Update()
     {
-        ScoreAndDifficltyHandler();
+        test();
     }
 
-
-    public void ScoreAndDifficltyHandler()
+    public void test()
     {
-        score.text = _Score.ToString();
-        diffeclty.text = _diffeclty.ToString();
         if (Input.GetKeyDown(KeyCode.O))
         {
             _Score++;
+            score.text = _Score.ToString();
+            diffeclty.text = _diffeclty.ToString();
+
+            if (_Score >= 3)
+            {
+                _diffeclty++;
+            }
+            else if (_Score >= 5)
+            {
+                _diffeclty++;
+            }
+            else if (_Score >= 7)
+            {
+                _diffeclty++;
+            }
+        }
+    }
+
+    public void ScoreAndDifficltyHandler()
+    {
+        _Score++;
+
+        score.text = _Score.ToString();
+        diffeclty.text = _diffeclty.ToString();
+
+
+
+        if (_Score >= 3)
+        {
+            _diffeclty++;
+        }
+        else if (_Score >= 5)
+        {
+            _diffeclty++;
+        }
+        else if (_Score >= 7)
+        {
             _diffeclty++;
         }
     }

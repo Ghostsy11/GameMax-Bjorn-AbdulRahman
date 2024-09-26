@@ -2,10 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SpwaningGameAssets : MonoBehaviour
+public class GunSpwaner : MonoBehaviour
 {
-    public List<GameObject> _gameObjects;
-    public GameObject boos;
+    public GameObject[] _gameObjects;
     public Vector3 _SpawnValue;
     public float _SpawnWait;
     public float _SpawnMost;
@@ -13,12 +12,10 @@ public class SpwaningGameAssets : MonoBehaviour
     public int _StartsWait;
     public bool _Stop = false;
     int RandomEnemy;
-    [SerializeField] ScoreManager scoremanager;
-
     private void Start()
     {
         StartCoroutine(waitSpawner());
-        var scoremanager = FindObjectOfType<ScoreManager>();
+
     }
 
     private void Update()
@@ -26,30 +23,7 @@ public class SpwaningGameAssets : MonoBehaviour
 
         _SpawnWait = Random.Range(_SpawnLeastWait, _SpawnMost);
 
-        if (_gameObjects.Count != 4)
-        {
-            if (scoremanager._diffeclty == 3)
-            {
-                _gameObjects.Add(boos);
-            }
-            else
-            {
-                return;
-            }
-        }
-        if (scoremanager._diffeclty != 31)
-        {
-            if (scoremanager._diffeclty == 30)
-            {
-                _SpawnWait = 3;
-                _SpawnMost = 3;
-                _SpawnLeastWait = 1;
-            }
-            else
-            {
-                return;
-            }
-        }
+
     }
 
     public IEnumerator waitSpawner()
@@ -58,7 +32,7 @@ public class SpwaningGameAssets : MonoBehaviour
 
         while (!_Stop)
         {
-            RandomEnemy = Random.Range(0, _gameObjects.Count);
+            RandomEnemy = Random.Range(0, _gameObjects.Length);
             Vector3 spwanPos = new Vector3(Random.Range(-_SpawnValue.x, _SpawnValue.x), _SpawnValue.y, Random.Range(-_SpawnValue.z, _SpawnValue.z));
             Instantiate(_gameObjects[RandomEnemy], spwanPos + transform.TransformPoint(0, 0, 0), gameObject.transform.rotation);
             yield return new WaitForSeconds(_SpawnWait);

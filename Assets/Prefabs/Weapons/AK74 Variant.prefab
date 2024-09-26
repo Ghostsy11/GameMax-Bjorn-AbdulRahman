@@ -85,7 +85,7 @@ MonoBehaviour:
   dropAnim: {fileID: 0}
   useKey: 323
   useSound: {fileID: 5274719309190202797}
-  bulletPrefab: {fileID: 0}
+  bulletPrefab: {fileID: 9141739129688607359, guid: 3f4772200d7a69d4a90328989309c410, type: 3}
   bulletSpawnPoint: {fileID: 0}
   kickBack: 40
 --- !u!82 &5274719309190202797
