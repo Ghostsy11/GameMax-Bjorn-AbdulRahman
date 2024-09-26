@@ -8,7 +8,9 @@ public class Weapon_PickUp : MonoBehaviour
 {
     public static Weapon_PickUp Instance;
     private Transform weaponSpot;
-    private List<GameObject> weapons = new();
+    [SerializeField]private List<GameObject> weapons = new();
+    //spawnable weapons with scripts
+    [SerializeField]private List<GameObject> weaponsPrefabsPlayer;
     private GameObject player;
     private int selectedWeapon = 0;
     void Start()

@@ -8,6 +8,7 @@ public class Weapon_Gun_Base : Weapon_Base
     // Start is called before the first frame update
     [SerializeField]protected GameObject bulletPrefab;
     [SerializeField]protected Transform bulletSpawnPoint;
+    [SerializeField]private int kickBack;
     protected override void Start()
     {
         base.Start();
@@ -25,15 +26,19 @@ public class Weapon_Gun_Base : Weapon_Base
 
     protected virtual void Shoot()
     {
-//        Instantiate(bulletPrefab, bulletSpawnPoint.position, bulletSpawnPoint.rotation);
+        //Instantiate(bulletPrefab, bulletSpawnPoint.position, bulletSpawnPoint.rotation);
     }
 
     protected override IEnumerator WeaponUsed()
     {
-        if (dropAnim != null){
-                    dropAnim.Play();
-        yield return new WaitForSeconds(dropAnim.clip.length);
+        int i = kickBack/10;
+        while(i > 0){
+            i--;
+            yield return new WaitForFixedUpdate();
+            transform.Rotate(10,0,0);
+            Debug.Log(i);
         }
+        Debug.Log("out while");
         Destroy(gameObject);
     }
 }

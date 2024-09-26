@@ -24,14 +24,13 @@ public abstract class Weapon_Base : MonoBehaviour
         }
     }
     protected virtual void Update(){
-        if(Input.GetKey(useKey) && !used){
+        if(Input.GetKeyDown(useKey) && !used){
             UseWeapon();
         }
     }
     //check if dropanim is not null then playe anim and destroy weapon
     //play use anim if not null and start weaponused function
     async protected virtual void UseWeapon(){
-        Debug.Log("weapon used");
         used = true;
         if (useAnim != null){
             useAnim.Play();
