@@ -24,7 +24,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8275464923071561784}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 1.5, y: 5.75, z: -13}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -42,6 +42,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 5321929099612165809}
     m_Modifications:
+    - target: {fileID: 551892266642558080, guid: 5ed2a23b85be12e419c4e28b43aea0c5, type: 3}
+      propertyPath: m_Intensity
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1393972125796463393, guid: 5ed2a23b85be12e419c4e28b43aea0c5, type: 3}
       propertyPath: playOnAwake
       value: 0
@@ -67,12 +71,40 @@ PrefabInstance:
       value: Untagged
       objectReference: {fileID: 0}
     - target: {fileID: 2989919687703914847, guid: 5ed2a23b85be12e419c4e28b43aea0c5, type: 3}
+      propertyPath: enemySpeed
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2989919687703914847, guid: 5ed2a23b85be12e419c4e28b43aea0c5, type: 3}
+      propertyPath: auidoPlayer
+      value: 
+      objectReference: {fileID: 2603752691905255595, guid: 28e7b15d20c98cc498bfdd957c4f06f8, type: 3}
+    - target: {fileID: 2989919687703914847, guid: 5ed2a23b85be12e419c4e28b43aea0c5, type: 3}
+      propertyPath: scoreManager
+      value: 
+      objectReference: {fileID: 6519601961520203063, guid: a54c8236e7a7c934485606c5b4e1b097, type: 3}
+    - target: {fileID: 2989919687703914847, guid: 5ed2a23b85be12e419c4e28b43aea0c5, type: 3}
+      propertyPath: SC_PlayerMovement
+      value: 
+      objectReference: {fileID: 4070568610002612992, guid: 5b0ce9121240b7446996e81c0de6fd85, type: 3}
+    - target: {fileID: 2989919687703914847, guid: 5ed2a23b85be12e419c4e28b43aea0c5, type: 3}
       propertyPath: playOnTouchingPlay
       value: 
       objectReference: {fileID: 2433282508523890284, guid: 3ef3ae421f71c5c4e97fe12dc2fc6312, type: 3}
     - target: {fileID: 3726731749002975537, guid: 5ed2a23b85be12e419c4e28b43aea0c5, type: 3}
       propertyPath: playOnAwake
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6610022258747357057, guid: 5ed2a23b85be12e419c4e28b43aea0c5, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 6610022258747357057, guid: 5ed2a23b85be12e419c4e28b43aea0c5, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 6610022258747357057, guid: 5ed2a23b85be12e419c4e28b43aea0c5, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.8
       objectReference: {fileID: 0}
     - target: {fileID: 6610022258747357057, guid: 5ed2a23b85be12e419c4e28b43aea0c5, type: 3}
       propertyPath: m_LocalPosition.x
@@ -113,6 +145,10 @@ PrefabInstance:
     - target: {fileID: 6610022258747357057, guid: 5ed2a23b85be12e419c4e28b43aea0c5, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6610022258747357057, guid: 5ed2a23b85be12e419c4e28b43aea0c5, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6789651351934583031, guid: 5ed2a23b85be12e419c4e28b43aea0c5, type: 3}
       propertyPath: playOnAwake
@@ -237,6 +273,10 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Untagged
       objectReference: {fileID: 0}
+    - target: {fileID: 3947965544011494209, guid: 0a27f1b8020210545922faea7e550cc4, type: 3}
+      propertyPath: m_Intensity
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5646133947758216358, guid: 0a27f1b8020210545922faea7e550cc4, type: 3}
       propertyPath: m_Color.g
       value: 0.26737964
@@ -248,6 +288,18 @@ PrefabInstance:
     - target: {fileID: 5646133947758216358, guid: 0a27f1b8020210545922faea7e550cc4, type: 3}
       propertyPath: m_Intensity
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7233470322105397877, guid: 0a27f1b8020210545922faea7e550cc4, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 7233470322105397877, guid: 0a27f1b8020210545922faea7e550cc4, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 7233470322105397877, guid: 0a27f1b8020210545922faea7e550cc4, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.8
       objectReference: {fileID: 0}
     - target: {fileID: 7233470322105397877, guid: 0a27f1b8020210545922faea7e550cc4, type: 3}
       propertyPath: m_LocalPosition.x
@@ -289,6 +341,26 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7233470322105397877, guid: 0a27f1b8020210545922faea7e550cc4, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8249748659014795405, guid: 0a27f1b8020210545922faea7e550cc4, type: 3}
+      propertyPath: enemySpeed
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8249748659014795405, guid: 0a27f1b8020210545922faea7e550cc4, type: 3}
+      propertyPath: auidoPlayer
+      value: 
+      objectReference: {fileID: 2603752691905255595, guid: 28e7b15d20c98cc498bfdd957c4f06f8, type: 3}
+    - target: {fileID: 8249748659014795405, guid: 0a27f1b8020210545922faea7e550cc4, type: 3}
+      propertyPath: scoreManager
+      value: 
+      objectReference: {fileID: 6519601961520203063, guid: a54c8236e7a7c934485606c5b4e1b097, type: 3}
+    - target: {fileID: 8249748659014795405, guid: 0a27f1b8020210545922faea7e550cc4, type: 3}
+      propertyPath: SC_PlayerMovement
+      value: 
+      objectReference: {fileID: 4070568610002612992, guid: 5b0ce9121240b7446996e81c0de6fd85, type: 3}
     - target: {fileID: 8249748659014795405, guid: 0a27f1b8020210545922faea7e550cc4, type: 3}
       propertyPath: playOnTouchingPlay
       value: 
@@ -325,6 +397,22 @@ PrefabInstance:
       value: Untagged
       objectReference: {fileID: 0}
     - target: {fileID: 3740005380929012270, guid: e2779cc1541e0324d8933f699ec5df0b, type: 3}
+      propertyPath: enemySpeed
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3740005380929012270, guid: e2779cc1541e0324d8933f699ec5df0b, type: 3}
+      propertyPath: auidoPlayer
+      value: 
+      objectReference: {fileID: 2603752691905255595, guid: 28e7b15d20c98cc498bfdd957c4f06f8, type: 3}
+    - target: {fileID: 3740005380929012270, guid: e2779cc1541e0324d8933f699ec5df0b, type: 3}
+      propertyPath: scoreManager
+      value: 
+      objectReference: {fileID: 6519601961520203063, guid: a54c8236e7a7c934485606c5b4e1b097, type: 3}
+    - target: {fileID: 3740005380929012270, guid: e2779cc1541e0324d8933f699ec5df0b, type: 3}
+      propertyPath: SC_PlayerMovement
+      value: 
+      objectReference: {fileID: 4070568610002612992, guid: 5b0ce9121240b7446996e81c0de6fd85, type: 3}
+    - target: {fileID: 3740005380929012270, guid: e2779cc1541e0324d8933f699ec5df0b, type: 3}
       propertyPath: playOnTouchingPlay
       value: 
       objectReference: {fileID: 1141330259687333425, guid: 6718dc24203da53468af9ada8fef7d6d, type: 3}
@@ -344,9 +432,25 @@ PrefabInstance:
       propertyPath: playOnAwake
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4584054679711792546, guid: e2779cc1541e0324d8933f699ec5df0b, type: 3}
+      propertyPath: m_Intensity
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5478872176785824345, guid: e2779cc1541e0324d8933f699ec5df0b, type: 3}
       propertyPath: playOnAwake
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5787821073316524607, guid: e2779cc1541e0324d8933f699ec5df0b, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 5787821073316524607, guid: e2779cc1541e0324d8933f699ec5df0b, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 5787821073316524607, guid: e2779cc1541e0324d8933f699ec5df0b, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.8
       objectReference: {fileID: 0}
     - target: {fileID: 5787821073316524607, guid: e2779cc1541e0324d8933f699ec5df0b, type: 3}
       propertyPath: m_LocalPosition.x
@@ -387,6 +491,10 @@ PrefabInstance:
     - target: {fileID: 5787821073316524607, guid: e2779cc1541e0324d8933f699ec5df0b, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5787821073316524607, guid: e2779cc1541e0324d8933f699ec5df0b, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6691863082839402618, guid: e2779cc1541e0324d8933f699ec5df0b, type: 3}
       propertyPath: playOnAwake

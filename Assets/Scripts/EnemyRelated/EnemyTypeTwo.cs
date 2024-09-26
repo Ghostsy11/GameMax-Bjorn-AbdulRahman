@@ -6,7 +6,7 @@ public class EnemyTypeTwo : MonoBehaviour
 {
     // Start is called before the first frame update
 
-    [SerializeField] Transform player;
+    [SerializeField] GameObject player;
     [SerializeField] float rotationSpeed;
     [SerializeField] float enemySpeed;
 
@@ -20,8 +20,13 @@ public class EnemyTypeTwo : MonoBehaviour
     [SerializeField] AudioSource audioSource;
 
     [SerializeField] ParticleSystem playOnTouchingPlay;
+
+    [SerializeField] SC_PlayerMovement SC_PlayerMovement;
+
+    [SerializeField] ScoreManager scoreManager;
     void Start()
     {
+        player = SC_PlayerMovement.Instance.gameObject;
         StartCoroutine(playMusic());
     }
 
@@ -45,7 +50,7 @@ public class EnemyTypeTwo : MonoBehaviour
     public void FlyToPlayer()
     {
         Vector3 taget = new Vector3(player.transform.position.x, transform.position.y, player.transform.position.z);
-        transform.position = Vector3.MoveTowards(gameObject.transform.position, taget, enemySpeed * Time.deltaTime);
+        transform.position = Vector3.MoveTowards(gameObject.transform.position, player.transform.position, enemySpeed * Time.deltaTime);
     }
 
     private void OnTriggerEnter(Collider other)
@@ -54,7 +59,9 @@ public class EnemyTypeTwo : MonoBehaviour
         if (other.gameObject.tag == "Player")
         {
             Instantiate(playOnTouchingPlay, transform.position, Quaternion.identity);
-            Debug.Log("GameOver");
+            other.gameObject.SetActive(false);
+            StartCoroutine(waitBeforeToGoMainMenu());
+
         }
     }
 
@@ -65,7 +72,7 @@ public class EnemyTypeTwo : MonoBehaviour
 
         foreach (var ObjectThatCollided in detectedObjects)
         {
-            if (ObjectThatCollided.name != "Speler")
+            if (ObjectThatCollided.name != "Player")
             {
 
 
@@ -104,6 +111,13 @@ public class EnemyTypeTwo : MonoBehaviour
     {
         Gizmos.color = Color.yellow;
         Gizmos.DrawWireSphere(transform.position, overlapSphereRaduis);
+    }
+
+    IEnumerator waitBeforeToGoMainMenu()
+    {
+        yield return new WaitForSeconds(2);
+        scoreManager.LoadGameOverScreen();
+        scoreManager.ResetScore();
     }
 
 }

@@ -18,8 +18,9 @@ public class Patrolling : MonoBehaviour
     [SerializeField] float overlapSphereRaduis;
 
     [SerializeField] GameObject player;
-    [SerializeField] private float rotationSpeed = 5;
-    [SerializeField] float _turnSpeed;
+    [SerializeField] private float PlayerrotationSpeed = 5;
+    [SerializeField] private float EnemyRotationSpeed;
+    [SerializeField][Range(0, 1)] float _turnSpeed;
 
     [SerializeField] float jumpForce;
     [SerializeField] Rigidbody Rigidbodyrb;
@@ -37,7 +38,7 @@ public class Patrolling : MonoBehaviour
 
     private void MoveToThePoints()
     {
-        if (!isFound && transform.position != points[current].position)
+        if (transform.position != points[current].position)
         {
             FaceTargetPoints();
             transform.position = Vector3.MoveTowards(transform.position, points[current].position, speedToThePoint * Time.deltaTime);
@@ -46,6 +47,7 @@ public class Patrolling : MonoBehaviour
         else
         {
             current = (current + 1) % points.Length;
+            _turnSpeed = 0;
         }
     }
 
@@ -57,7 +59,7 @@ public class Patrolling : MonoBehaviour
         {
             foreach (var ObjectThatCollided in detectedObjects)
             {
-                if (ObjectThatCollided.name != "Speler")
+                if (ObjectThatCollided.tag != "Player")
                 {
                     MoveToThePoints();
 
@@ -85,13 +87,11 @@ public class Patrolling : MonoBehaviour
 
     private IEnumerator RotateToPlayer()
     {
-
-
         Vector3 direction = player.transform.position - transform.position;
         Quaternion rotationToPlayer = Quaternion.LookRotation(direction);
         rotationToPlayer.x = 0;
         rotationToPlayer.z = 0;
-        transform.rotation = Quaternion.Lerp(transform.rotation, rotationToPlayer, rotationSpeed * Time.deltaTime);
+        transform.rotation = Quaternion.Lerp(transform.rotation, rotationToPlayer, PlayerrotationSpeed * Time.deltaTime);
         yield return new WaitForFixedUpdate();
         StartCoroutine(RotateToPlayer());
 
@@ -121,12 +121,13 @@ public class Patrolling : MonoBehaviour
 
     private void FaceTargetPoints()
     {
+        Vector3 direction = (points[current].transform.position - transform.position).normalized;
+        Quaternion LookRotation = Quaternion.LookRotation(direction);
+        //transform.rotation = LookRotation;
+        _turnSpeed += Time.deltaTime / EnemyRotationSpeed;
+        transform.rotation = Quaternion.Lerp(transform.rotation, LookRotation, _turnSpeed);
+        //transform.rotation = Quaternion.Lerp(transform.rotation, LookRotation, _turnSpeed * Time.deltaTime);
 
-        Vector3 direction = (points[current].position - transform.position).normalized;
-        Quaternion LookRotation = Quaternion.LookRotation(transform.position, points[current].position);
-        LookRotation.x = 0;
-        LookRotation.z = 0;
-        transform.rotation = Quaternion.Lerp(transform.rotation, LookRotation, _turnSpeed * Time.deltaTime);
 
     }
 

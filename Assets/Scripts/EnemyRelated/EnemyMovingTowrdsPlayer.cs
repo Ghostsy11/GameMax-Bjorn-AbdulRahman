@@ -20,6 +20,9 @@ public class EnemyMovingTowrdsPlayer : MonoBehaviour
 
     [SerializeField] AnimationContoller animationContoller;
 
+    // UI GameOverScript
+    public GameObject panel;
+    [SerializeField] ScoreManager scoreManager;
 
     public int GetHealth(int _enemyHealth)
     {
@@ -41,6 +44,15 @@ public class EnemyMovingTowrdsPlayer : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
+        IEnumerator waitCoupleOfSecounds()
+        {
+            yield return new WaitForSeconds(1.5f);
+            zombieSounds.PlayZombieSlap();
+            collision.gameObject.SetActive(false);
+            scoreManager.LoadGameOverScreen();
+            scoreManager.ResetScore();
+        }
+
         if (collision.gameObject.tag == "Player")
         {
             animationContoller.PlayAttackWithTwoHands();
@@ -49,11 +61,15 @@ public class EnemyMovingTowrdsPlayer : MonoBehaviour
         }
     }
 
-    IEnumerator waitCoupleOfSecounds()
-    {
-        yield return new WaitForSeconds(1.5f);
-        zombieSounds.PlayZombieSlap();
 
+    public void SetGameOverPanelOn()
+    {
+        panel.SetActive(true);
+    }
+
+    public void SetGameOverPanelOff()
+    {
+        panel.SetActive(false);
     }
 
 }
