@@ -4,15 +4,24 @@ using UnityEngine;
 
 public class Weapon_Gun_Revolver : Weapon_Gun_Base
 {
-    // Start is called before the first frame update
+    int loadedCartridge = 0;
+    int currentCartridge = 0;
     protected override void Start()
     {
-        
+        base.Start();
+        loadedCartridge = Random.Range(0,6);
     }
-
-    // Update is called once per frame
-    protected override void Update()
+    protected override void UseWeapon()
     {
-        base.Update();
+        if(currentCartridge == loadedCartridge)
+        {
+            base.UseWeapon();
+        }
+        else
+        {
+            currentCartridge++;
+        }
+                    Debug.Log(currentCartridge);
+                    Debug.Log(loadedCartridge);
     }
 }

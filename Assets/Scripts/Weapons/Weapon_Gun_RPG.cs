@@ -1,18 +1,19 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Weapon_Gun_RPG : MonoBehaviour
+public class Weapon_Gun_RPG : Weapon_Gun_Base
 {
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField]private float knockBackForce;
+    protected override void Shoot()
     {
-        
+        KnockBack();
+        base.Shoot();
     }
 
-    // Update is called once per frame
-    void Update()
+    private void KnockBack()
     {
-        
+        player.GetComponent<Rigidbody>().AddForce(Vector3.forward * knockBackForce);
     }
 }

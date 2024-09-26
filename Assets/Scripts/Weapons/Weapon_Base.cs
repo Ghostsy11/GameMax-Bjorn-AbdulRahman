@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using Unity.VisualScripting;
 using UnityEditor.Animations;
+using UnityEditor.ShaderGraph.Drawing.Inspector.PropertyDrawers;
 using UnityEngine;
 
 public abstract class Weapon_Base : MonoBehaviour
@@ -12,24 +13,30 @@ public abstract class Weapon_Base : MonoBehaviour
     protected Animation dropAnim;
     protected KeyCode useKey = KeyCode.Mouse0;
     protected GameObject player;
+    protected Camera cam;
+    protected AudioSource useSound;
+    protected bool used = false;
     protected virtual void Start(){
         player = GameObject.Find("Player");
+        cam = Camera.main;
         if (pickUpAnim != null){
             pickUpAnim.Play();
         }
     }
     protected virtual void Update(){
-        if(Input.GetKey(useKey)){
+        if(Input.GetKey(useKey) && !used){
             UseWeapon();
         }
     }
     //check if dropanim is not null then playe anim and destroy weapon
     //play use anim if not null and start weaponused function
     async protected virtual void UseWeapon(){
+        used = true;
         if (useAnim != null){
             useAnim.Play();
             await Task.Delay((int)(useAnim.clip.length/1000));
         }
+        useSound.Play();
         StartCoroutine(WeaponUsed());
     }
     protected abstract IEnumerator WeaponUsed();

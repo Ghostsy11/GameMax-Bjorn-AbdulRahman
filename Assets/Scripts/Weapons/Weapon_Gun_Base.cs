@@ -7,6 +7,7 @@ public class Weapon_Gun_Base : Weapon_Base
 {
     // Start is called before the first frame update
     [SerializeField]protected GameObject bulletPrefab;
+    [SerializeField]protected Transform bulletSpawnPoint;
     protected override void Start()
     {
         base.Start();
@@ -22,9 +23,9 @@ public class Weapon_Gun_Base : Weapon_Base
         Shoot();
     }
 
-    private void Shoot()
+    protected virtual void Shoot()
     {
-        Instantiate(bulletPrefab);
+        Instantiate(bulletPrefab, bulletSpawnPoint.position, cam.transform.rotation);
     }
 
     protected override IEnumerator WeaponUsed()
