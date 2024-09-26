@@ -25,7 +25,7 @@ public class Weapon_Gun_Base : Weapon_Base
 
     protected virtual void Shoot()
     {
-        Instantiate(bulletPrefab, bulletSpawnPoint.position, cam.transform.rotation);
+//        Instantiate(bulletPrefab, bulletSpawnPoint.position, bulletSpawnPoint.rotation);
     }
 
     protected override IEnumerator WeaponUsed()

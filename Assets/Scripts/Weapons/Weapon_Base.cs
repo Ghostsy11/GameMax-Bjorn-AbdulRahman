@@ -8,13 +8,13 @@ using UnityEngine;
 
 public abstract class Weapon_Base : MonoBehaviour
 {
-    protected Animation useAnim;
-    protected Animation pickUpAnim;
-    protected Animation dropAnim;
-    protected KeyCode useKey = KeyCode.Mouse0;
+    [SerializeField]protected Animation useAnim;
+    [SerializeField]protected Animation pickUpAnim;
+    [SerializeField]protected Animation dropAnim;
+    [SerializeField]protected KeyCode useKey = KeyCode.Mouse0;
     protected GameObject player;
     protected Camera cam;
-    protected AudioSource useSound;
+    [SerializeField]protected AudioSource useSound;
     protected bool used = false;
     protected virtual void Start(){
         player = GameObject.Find("Player");
@@ -31,12 +31,15 @@ public abstract class Weapon_Base : MonoBehaviour
     //check if dropanim is not null then playe anim and destroy weapon
     //play use anim if not null and start weaponused function
     async protected virtual void UseWeapon(){
+        Debug.Log("weapon used");
         used = true;
         if (useAnim != null){
             useAnim.Play();
             await Task.Delay((int)(useAnim.clip.length/1000));
         }
-        useSound.Play();
+        if (useSound != null){
+            useSound.Play();
+        }
         StartCoroutine(WeaponUsed());
     }
     protected abstract IEnumerator WeaponUsed();
