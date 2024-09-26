@@ -8,6 +8,6 @@ public class SC_LookAtPlayer : MonoBehaviour
 
     void Update()
     {
-        transform.LookAt(target);
+        transform.LookAt(new Vector3(target.position.x, transform.position.y, target.position.z));
     }
 }
