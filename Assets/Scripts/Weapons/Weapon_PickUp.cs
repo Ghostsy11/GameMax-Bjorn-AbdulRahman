@@ -71,8 +71,8 @@ public class Weapon_PickUp : MonoBehaviour
     {
         if (collider.gameObject == player.gameObject && weaponSpot.childCount <= 0)
         {
-            Instance = null;
             Instantiate(weaponsPrefabsPlayer[selectedWeapon], weaponSpot.position, weaponSpot.rotation, weaponSpot);
+            Instance = null;
             Destroy(gameObject);
         }
     }
