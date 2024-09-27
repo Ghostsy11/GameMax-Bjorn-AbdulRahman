@@ -1179,7 +1179,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &725992877
 Transform:
   m_ObjectHideFlags: 0
@@ -1542,7 +1542,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a30ee987b24ca94f9adac8d4399c051, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pickUp: {fileID: 0}
 --- !u!1 &942636622
 GameObject:
   m_ObjectHideFlags: 0
@@ -1599,7 +1598,7 @@ Transform:
   m_GameObject: {fileID: 944256707}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 1}
+  m_LocalPosition: {x: 0, y: -0.02, z: 1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1719,7 +1718,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a30ee987b24ca94f9adac8d4399c051, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pickUp: {fileID: 0}
 --- !u!1 &985395091
 GameObject:
   m_ObjectHideFlags: 0
@@ -2071,7 +2069,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a30ee987b24ca94f9adac8d4399c051, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pickUp: {fileID: 0}
 --- !u!1 &1228616881
 GameObject:
   m_ObjectHideFlags: 0
@@ -2930,7 +2927,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a30ee987b24ca94f9adac8d4399c051, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pickUp: {fileID: 0}
 --- !u!1 &1833821013
 GameObject:
   m_ObjectHideFlags: 0
@@ -2982,7 +2978,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a30ee987b24ca94f9adac8d4399c051, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pickUp: {fileID: 0}
 --- !u!1 &1956937415
 GameObject:
   m_ObjectHideFlags: 0
@@ -3317,7 +3312,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a30ee987b24ca94f9adac8d4399c051, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pickUp: {fileID: 0}
 --- !u!1001 &1377751242831736004
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3431,7 +3425,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a30ee987b24ca94f9adac8d4399c051, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pickUp: {fileID: 0}
 --- !u!1001 &3102605430969275898
 PrefabInstance:
   m_ObjectHideFlags: 0
