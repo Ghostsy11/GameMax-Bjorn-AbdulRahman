@@ -15,7 +15,7 @@ public class OnBulletTrigger : MonoBehaviour
         if (other.CompareTag("Bullet"))
         {
             FindObjectOfType<ScoreManager>().ScoreAndDifficltyHandler();
-            Destroy(gameObject, 1);
+            Destroy(gameObject);
         }
     }
 }

@@ -19,7 +19,7 @@ public class Bullet : MonoBehaviour
         if (!collider.CompareTag("Player"))
         {
             Debug.Log("dead");
-            Destroy(gameObject);
+            Destroy(gameObject, 0.1f);
         }
     }
 }
