@@ -18,6 +18,7 @@ public class Bullet : MonoBehaviour
     protected virtual void OnTriggerEnter(Collider collider){
         if (!collider.CompareTag("Player"))
         {
+            Debug.Log("dead");
             Destroy(gameObject);
         }
     }
