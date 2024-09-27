@@ -70,17 +70,21 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1070180911246410013, guid: 3f4772200d7a69d4a90328989309c410, type: 3}
+      propertyPath: bulletSpeed
+      value: 200
+      objectReference: {fileID: 0}
     - target: {fileID: 1292345250885197328, guid: 3f4772200d7a69d4a90328989309c410, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -7.81
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1292345250885197328, guid: 3f4772200d7a69d4a90328989309c410, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1292345250885197328, guid: 3f4772200d7a69d4a90328989309c410, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 26.98
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1292345250885197328, guid: 3f4772200d7a69d4a90328989309c410, type: 3}
       propertyPath: m_LocalRotation.w
