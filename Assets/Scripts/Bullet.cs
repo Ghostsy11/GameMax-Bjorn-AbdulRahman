@@ -16,7 +16,7 @@ public class Bullet : MonoBehaviour
         rb.AddRelativeForce(Vector3.forward * bulletSpeed);
     }
     protected virtual void OnTriggerEnter(Collider collider){
-        if (collider.CompareTag("Player"))
+        if (!collider.CompareTag("Player"))
         {
             Destroy(gameObject);
         }
