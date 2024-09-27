@@ -17,6 +17,10 @@ public class ScoreManager : MonoBehaviour
     {
         score.text = _Score.ToString();
         diffeclty.text = _diffeclty.ToString();
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
+
+
     }
 
     void Update()
@@ -79,7 +83,7 @@ public class ScoreManager : MonoBehaviour
 
     public void LoadGameOverScreen()
     {
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene(3);
 
     }
 

@@ -46,9 +46,9 @@ public class EnemyMovingTowrdsPlayer : MonoBehaviour
     {
         IEnumerator waitCoupleOfSecounds()
         {
-            yield return new WaitForSeconds(1.5f);
             zombieSounds.PlayZombieSlap();
             collision.gameObject.SetActive(false);
+            yield return new WaitForSeconds(2.2f);
             scoreManager.LoadGameOverScreen();
             scoreManager.ResetScore();
         }
