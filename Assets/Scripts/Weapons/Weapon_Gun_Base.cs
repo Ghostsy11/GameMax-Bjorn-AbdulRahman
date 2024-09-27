@@ -13,7 +13,6 @@ public class Weapon_Gun_Base : Weapon_Base
     {
         base.Start();
         bulletSpawnPoint = Camera.main.transform.GetChild(2);
-        bulletSpawnPoint.position = Camera.main.transform.position + Vector3.forward;
     }
 
     // Update is called once per frame
@@ -29,7 +28,7 @@ public class Weapon_Gun_Base : Weapon_Base
 
     protected virtual void Shoot()
     {
-        Instantiate(bulletPrefab, bulletSpawnPoint.position, bulletSpawnPoint.rotation);
+        Instantiate(bulletPrefab, bulletSpawnPoint.position, Camera.main.transform.rotation, null);
     }
 
     protected override IEnumerator WeaponUsed()

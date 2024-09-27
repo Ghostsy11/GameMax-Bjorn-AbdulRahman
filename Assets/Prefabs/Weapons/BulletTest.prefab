@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 556854311139760561}
   - component: {fileID: 4903328626711233959}
   - component: {fileID: 7030111494696523897}
+  - component: {fileID: 1070180911246410013}
   m_Layer: 0
   m_Name: BulletTest
   m_TagString: Bullet
@@ -105,3 +106,16 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 5, y: 5, z: 5}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1070180911246410013
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9141739129688607359}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f56fd9cd9923ff641b46c2c57fef0aed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bulletSpeed: 10
