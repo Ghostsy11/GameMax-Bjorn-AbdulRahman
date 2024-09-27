@@ -2384,6 +2384,10 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 7531753614773408123, guid: 2247a936aa19dca42aa9fd66ef943ba0, type: 3}
+      propertyPath: m_Convex
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7824214295247416255, guid: 2247a936aa19dca42aa9fd66ef943ba0, type: 3}
       propertyPath: m_LocalRotation.w
       value: 1
