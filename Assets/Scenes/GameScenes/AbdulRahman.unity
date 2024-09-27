@@ -732,12 +732,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _gameObjects:
   - {fileID: 8032741010668667649, guid: 17ad8594785e23e499e558dee2559747, type: 3}
-  - {fileID: 8032741010668667649, guid: 17ad8594785e23e499e558dee2559747, type: 3}
-  _SpawnValue: {x: 35, y: 1.5, z: 35}
+  _SpawnValue: {x: 30, y: 1, z: 30}
   _SpawnWait: 1
-  _SpawnMost: 3
+  _SpawnMost: 2
   _SpawnLeastWait: 1
-  _StartsWait: 3
+  _StartsWait: 2
   _Stop: 0
 --- !u!1 &533395339
 GameObject:
@@ -1164,7 +1163,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &725992877
 Transform:
   m_ObjectHideFlags: 0
@@ -1563,7 +1562,7 @@ Transform:
   m_GameObject: {fileID: 944256707}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 1}
+  m_LocalPosition: {x: 0, y: -0.02, z: 1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
